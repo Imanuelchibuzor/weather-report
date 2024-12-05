@@ -61,9 +61,9 @@ function convertCountryCode(country) {
 }
 
 function getWeather() {
-  const API_KEY = '0226c3de9dcc6566e26d5b3e84e72d0c';
+  const API_KEY;
 
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${currCity}&appid=${API_KEY}&units=${units}`).then(res => res.json()).then(data => {
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${currCity}&appid=0226c3de9dcc6566e26d5b3e84e72d0c&units=${units}`).then(res => res.json()).then(data => {
     city.innerHTML = `${data.name}, ${convertCountryCode(data.sys.country)}`;
     datetime.innerHTML = convertTimeStamp(data.dt, data.timezone);
     weather__forecast.innerHTML = `<p>${data.weather[0].main}</p>`;
